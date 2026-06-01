@@ -1,0 +1,28 @@
+{
+  "name": "inventory-service",
+  "version": "1.0.0",
+  "description": "Inventory microservice — Kafka consumer/producer for stock validation",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.0",
+    "@nestjs/config": "^3.2.0",
+    "@nestjs/core": "^10.3.0",
+    "@nestjs/microservices": "^10.3.0",
+    "@nestjs/typeorm": "^10.0.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "kafkajs": "^2.2.4",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.2.1",
+    "rxjs": "^7.8.1",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.3.2",
+    "@types/node": "^20.11.16",
+    "typescript": "^5.3.3"
+  }
+}
