@@ -73,6 +73,10 @@ curl -s -X POST http://localhost:3000/orders \
 cd orders-service
 npm install
 npm test
+
+cd ../inventory-service
+npm install
+npm test
 ```
 
 ## Notes
@@ -82,3 +86,5 @@ npm test
 **Idempotent consumers** — both services track processed events in a `processed_events` table so duplicate deliveries from Kafka are silently ignored.
 
 **Correlation ID** — a UUID is generated when an order is created and flows through every event, making it easy to trace a request across both services in the logs. You can also pass your own via the `x-correlation-id` request header.
+
+**Consumer retry and dead-letter handling** — intentionally left out to keep the implementation focused on the core event-driven flow. In a production environment, I would introduce retry policies with exponential backoff and dead-letter topics for messages that exceed the retry threshold.
